@@ -28,25 +28,22 @@ while (true) {
 
   talle = prompt("Indique el talle deseado. Talle s-m-l-xl.");
 
-  if (!(talle == "s" || talle == "m" || talle == "l" || talle == "xl")) {
+  while (!(talle == "s" || talle == "m" || talle == "l" || talle == "xl")) {
     alert("Ingrese un talle valido");
-    continue;
+    talle = prompt("Indique el talle deseado. Talle s-m-l-xl.");
   }
 
   color = prompt("Indique que color le gustaria. Rosa, blanco o negro");
-  if (!(color == "rosa" || color == "blanco" || color == "negro")) {
+  while (!(color == "rosa" || color == "blanco" || color == "negro")) {
     alert("Ingrese un color valido");
-    continue;
+    color = prompt("Indique que color le gustaria. Rosa, blanco o negro");
   }
 
   itemPedido = `producto ${producto} - talle ${talle} - color ${color}.`;
 
-alert(`${
-  itemPedido
-} Fue agregado a su pedido`)
+  alert(`${itemPedido} Fue agregado a su pedido`);
 
-  pedido = `${pedido} \n ${itemPedido}`
-  
+  pedido = `${pedido} \n ${itemPedido}`;
 }
-alert (pedido)
+alert(pedido);
 alert("Gracias por utilizar Charly Lovers");
