@@ -323,18 +323,22 @@ const agregarAlPedido = (prenda, talle, color) => {
 };
 
 const mostrarPedido = () => {
-  const total = pedido.reduce((acc, producto) => acc + producto.precio, 0);
-  const encabezado = `Detalle del pedido\nCantidad de productos: ${pedido.length}\nCosto Total $${total}\n`;
-  const pedidoTotal =
-    encabezado +
-    pedido
-      .map(
-        (item) =>
-          `producto ${item.prenda} - talle ${item.talle} - color ${item.color}.\n`
-      )
-      .join("");
+  let container = document.getElementById("pedido");
 
-  alert(pedidoTotal);
+  const total = pedido.reduce((acc, producto) => acc + producto.precio, 0);
+
+  let template = `<h3>Cantidad de productos en su pedido ${pedido.length} </h3>
+      <h4>Costo total $${total}</h4>
+      <h5>Detalle</h5>
+      <ul>
+        ${pedido
+          .map(
+            (item) =>
+              `<li>producto ${item.prenda} - talle ${item.talle} - color ${item.color}.\n</li>`
+          )
+          .join("")}
+      </ul>`;
+      container.innerHTML = template
 };
 
 alert("Bienvenida a Charly Lovers. Haga su pedido");
