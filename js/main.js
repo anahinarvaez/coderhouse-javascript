@@ -322,36 +322,35 @@ const agregarAlPedido = (prenda, talle, color) => {
   pedido.push(itemPedido);
 };
 
-const mostrarPedido = () => {
+const actualizarPedido = () => {
   let container = document.getElementById("pedido");
 
   const total = pedido.reduce((acc, producto) => acc + producto.precio, 0);
 
-  let template = `<h3>Cantidad de productos en su pedido ${pedido.length} </h3>
-      <h4>Costo total $${total}</h4>
-      <h5>Detalle</h5>
-      <ul>
-        ${pedido
-          .map(
-            (item) =>
-              `<li>producto ${item.prenda} - talle ${item.talle} - color ${item.color}.\n</li>`
-          )
-          .join("")}
-      </ul>`;
-      container.innerHTML = template
+  let costoTotal = document.getElementById("costoTotal");
+  let cantidad = document.getElementById("cantidad");
+  costoTotal.innerText = total;
+  cantidad.innerText = pedido.length;
+
+  container.innerHTML = pedido
+    .map(
+      (item) =>
+        `<li>producto ${item.prenda} - talle ${item.talle} - color ${item.color}.\n</li>`
+    )
+    .join("");
 };
 
-alert("Bienvenida a Charly Lovers. Haga su pedido");
-const prendas = [...new Set(stock.map((producto) => producto.prenda))];
-while (true) {
+const nuevoItem = () => {
+  const prendas = [...new Set(stock.map((producto) => producto.prenda))];
   let prenda = inputUsuario(
     `¿Qué es lo que esta buscando? ${prendas} o escriba ESC para finalizar.`,
     [...prendas, "ESC"],
     "Ingrese un producto valido"
   );
 
+  //POR EL MOMENTO PARA QUE EL USUARIO CANCELE EL INGRESO DE UN PRODUCTO, TIENE QUE ESCRIBIR ESC, ESTO SERÁ MODIFICADO EN LA ENTREGA FINAL.
   if (prenda == "ESC") {
-    break;
+    return;
   }
 
   let talles = [
@@ -384,6 +383,28 @@ while (true) {
   );
 
   agregarAlPedido(prenda, talle, color);
-}
-mostrarPedido();
-alert("Gracias por utilizar Charly Lovers");
+  actualizarPedido();
+};
+
+const limpiarPedido = () => {
+  pedido = [];
+  actualizarPedido();
+};
+
+const confirmarPedido = () => { 
+  //SI EL CARRITO NO TIENE NINGUN PRODUCTO EL USUARIO NO PUEDE CONFIRMAR EL PEDIDO.
+  if (pedido.length <= 0) {
+    alert("Por favor ingrese un producto al carrito.");
+    return;
+  }
+  alert("Gracias por utiizar Charly Lovers, su pedido ya fue enviado.");
+  limpiarPedido();
+};
+//DEFINO MIS EVENTOS
+//CUANDO EL USUARIO CLICKEA LOS BOTONES SE EJECUTAN LAS OPERACIONES.
+let nuevoItemBtn = document.getElementById("nuevoItem");
+nuevoItemBtn.onclick = nuevoItem;
+let confirmarBtn = document.getElementById("confirmar");
+confirmarBtn.onclick = confirmarPedido;
+let cancelarBtn = document.getElementById("cancelar");
+cancelarBtn.onclick = limpiarPedido;
