@@ -1,4 +1,26 @@
+const clavePedidoStorage = "pedido";
+
+// variable donde se guardan los items elegidos por el usuario
 let pedido = [];
+
+// para guardar el pedido que se esta armando en el storage del navegador 
+const guardarPedidoEnStorage = () => {
+  localStorage.setItem(clavePedidoStorage, JSON.stringify(pedido));
+}
+
+
+// para recuperar el pedido no enviado del storage del navegador
+const recuperarPedidoDelStorage = () => {
+  
+  const pedidoEnStorage = localStorage.getItem(clavePedidoStorage);
+
+  if(pedidoEnStorage){
+    pedido = JSON.parse(pedidoEnStorage);
+  }else{
+    pedido = []
+  }
+}
+
 
 const stock = [
   {
@@ -322,7 +344,7 @@ const agregarAlPedido = (prenda, talle, color) => {
   pedido.push(itemPedido);
 };
 
-const actualizarPedido = () => {
+const actualizarHtmlDelPedido = () => {
   let container = document.getElementById("pedido");
 
   const total = pedido.reduce((acc, producto) => acc + producto.precio, 0);
@@ -330,6 +352,7 @@ const actualizarPedido = () => {
   let costoTotal = document.getElementById("costoTotal");
   let cantidad = document.getElementById("cantidad");
   costoTotal.innerText = total;
+
   cantidad.innerText = pedido.length;
 
   container.innerHTML = pedido
@@ -338,6 +361,8 @@ const actualizarPedido = () => {
         `<li>producto ${item.prenda} - talle ${item.talle} - color ${item.color}.\n</li>`
     )
     .join("");
+
+  guardarPedidoEnStorage();
 };
 
 const nuevoItem = () => {
@@ -383,12 +408,13 @@ const nuevoItem = () => {
   );
 
   agregarAlPedido(prenda, talle, color);
-  actualizarPedido();
+  actualizarHtmlDelPedido();
 };
 
 const limpiarPedido = () => {
   pedido = [];
-  actualizarPedido();
+  actualizarHtmlDelPedido();
+  guardarPedidoEnStorage();
 };
 
 const confirmarPedido = () => { 
@@ -400,6 +426,13 @@ const confirmarPedido = () => {
   alert("Gracias por utiizar Charly Lovers, su pedido ya fue enviado.");
   limpiarPedido();
 };
+
+
+///////// Algoritmo cuando el usuario accede a la pagina
+
+recuperarPedidoDelStorage();
+actualizarHtmlDelPedido();
+
 //DEFINO MIS EVENTOS
 //CUANDO EL USUARIO CLICKEA LOS BOTONES SE EJECUTAN LAS OPERACIONES.
 let nuevoItemBtn = document.getElementById("nuevoItem");
@@ -408,3 +441,12 @@ let confirmarBtn = document.getElementById("confirmar");
 confirmarBtn.onclick = confirmarPedido;
 let cancelarBtn = document.getElementById("cancelar");
 cancelarBtn.onclick = limpiarPedido;
+
+// evento para refrescar la pagina por si el usuario habia cambiado de tab 
+document.addEventListener("visibilitychange", function() {
+  if (document.hidden){
+      console.log("El tab no es visible")
+  } else {
+      location.reload(); // refresa la pagina
+  }}
+)
