@@ -22,143 +22,37 @@
     <title>Charly Lovers Home</title>
   </head>
   <body>
-
-    <!--NAV BAR VERSION CON JS PRUEBA-->
-
-    <nav class="navbar"></nav>
-<!--VENTANA MODAL PRACTICA-->
-<!--boton para que salga la ventana modal-->
-<!-- <button><a href="ventana-modal.html">SUSCRIBETE</a></button>
-</header>
-    <section class="modal">
-      <div class="modal-container">
-          <img class="modal-img" src="img/CHARLY LOVERS.png" >
-          <h2 class="title">Detalle de tu orden de compra</h2>
-          <p class="paragraph">Vestido Blanco $3500</p>
-          <div class="btns">
-              <a href="#" class="open-view">Vaciar carrito</a>
-              <a href="#" class="open-guide">Comprar</a>
+    <nav class="navbar">
+      <div class="nav">
+        <img src="../img/CHARLY LOVERS.png" class="brand-logo" alt="" />
+        <div class="nav-items">
+          <div class="search">
+            <input
+              type="text"
+              class="search-box"
+              placeholder="buscar producto"
+            />
+            <button class="search-btn">Buscar</button>
           </div>
-          <a href="index.html" class="close">&times;</a>
-          <!--Codigo para que cierre ventana modal-->
-      <!-- </div>
-  </section> --> 
+          <a href="#"><img src="img/user.png" alt="" /></a>
+          <a href="#" onclick="mostrarCarrito()"
+            ><img src="img/cart.png" alt=""
+          /></a>
+        </div>
+      </div>
+      <ul class="links-container">
+        <li class="link-item"><a href="#" class="link">home</a></li>
+        <li class="link-item"><a href="#" class="link">vestidos</a></li>
+        <li class="link-item"><a href="#" class="link">pantalones</a></li>
+        <li class="link-item"><a href="#" class="link">remeras</a></li>
+        <li class="link-item"><a href="#" class="link">accessorios</a></li>
+      </ul>
+    </nav>
+    <!--VENTANA MODAL CARRITO-->
 
+    <div id="carrito"></div>
 
-
-    <!-- <h1>Bienvenida a Charly Lovers</h1>
-    <h3>Cantidad de productos <b id="cantidad"></b></h3>
-    <h4>Total <b id="costoTotal"></b></h4>
-    <h4>Detalle</h4>
-
-    <ul id="pedido"></ul>
-    <div>
-      <button id="nuevoItem">Agregar producto</button>
-      <button id="confirmar">Confirmar</button>
-      <button id="cancelar">Cancelar</button>
-    </div> -->
-    <div class="container" id="catalogo">
-      <div class="card">
-        <img src="../img/pexels-olya-kobruseva-4869701.jpg" alt="" />
-        <h4>Vestido Blanco</h4>
-        <p>Lorem ipsum dolor sit</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-
-      <div class="card">
-        <img src="../img/pexels-ram-dabhi-5774741.jpg" alt="" />
-        <h4>Ropa Informal</h4>
-        <p>Lorem ipsum dolor sit</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-
-      <div class="card">
-        <img src="../img/pexels-thirdman-8053687.jpg" alt="" />
-        <h4>Vestido Naranja</h4>
-        <p>Lorem ipsum dolor</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="../img/pexels-alexander-zvir-4941258.jpg" alt="" />
-        <h4>Vestido Negro Playa</h4>
-        <p>Lorem ipsum dolor</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="../img/pexels-cottonbro-10669649.jpg" alt="" />
-        <h4>Saco Cielo</h4>
-        <p>Lorem ipsum dolor</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="../img/pexels-juliano-astc-9396259.jpg" alt="" />
-        <h4>Vestido Floreado</h4>
-        <p>Lorem ipsum dolor</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="../img/pexels-mikhail-nilov-7624800.jpg" alt="" />
-        <h4>Mono Corto</h4>
-        <p>Lorem ipsum dolor</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="../img/pexels-rulo-davila-5315369.jpg" alt="" />
-        <h4>Vestido Rojo</h4>
-        <p>Lorem ipsum dolor</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="../img/pexels-sharath-kumar-10130971.jpg" alt="" />
-        <h4>Vestido Rayas Azul</h4>
-        <p>Lorem ipsum dolor</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="../img/pexels-rich-ortiz-5661568.jpg" alt="" />
-        <h4>Vestido Negro Corto</h4>
-        <p>Lorem ipsum dolor sit</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="../img/pexels-josue-ladoo-pelegrin-7446545.jpg" alt="" />
-        <h4>Jardinero Cuadriculado</h4>
-        <p>Lorem ipsum dolor sit</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="./img/pexels-jennifer-enujiugha-2395921.jpg" alt="" />
-        <h4>Vestido Estampado</h4>
-        <p>Lorem ipsum dolor sit</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="../img/pexels-trương-kháng-9747505.jpg" alt="" />
-        <h4>Vestido Blanco</h4>
-        <p>Lorem ipsum dolor sit</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="../img/pexels-cottonbro-10669636.jpg" alt="" />
-        <h4>Saco Fucsia</h4>
-        <p>Lorem ipsum dolor sit</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="../img/pexels-rulo-davila-10145728.jpg" alt="" />
-        <h4>Saco Coral</h4>
-        <p>Lorem ipsum dolor sit</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-      <div class="card">
-        <img src="./img/pexels-rulo-davila-7861082.jpg" alt="" />
-        <h4>Pantalon Naranja</h4>
-        <p>Lorem ipsum dolor sit</p>
-        <input type="button" value="Agregar al Carrito" />
-      </div>
-    </div>
-
-   
+    <div class="container" id="catalogo"></div>
 
     <!--Footer-->
     <footer class="pie-pagina">
@@ -173,7 +67,7 @@
         <div class="box">
           <h2>SOBRE NOSOTRAS</h2>
           <p>
-            Charly Lovers es una tienda de ropa para chicas fundada en 2022. 
+            Charly Lovers es una tienda de ropa para chicas fundada en 2022.
             Nace de la pasión por la moda de una joven emprendedora. En nuestra
             tienda ofrecemos la moda actual y de tendencia enfocada a todo tipo
             de público femenino y con precios competitivos.
@@ -198,6 +92,5 @@
     </footer>
   </body>
 
-  <script src="js/nav.js"></script>
   <script src="js/main.js"></script>
 </html>

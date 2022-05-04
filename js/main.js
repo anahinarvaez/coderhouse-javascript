@@ -1,452 +1,203 @@
-const clavePedidoStorage = "pedido";
+const CLAVE_PEDIDO_STORAGE = "pedido";
 
 // variable donde se guardan los items elegidos por el usuario
 let pedido = [];
 
-// para guardar el pedido que se esta armando en el storage del navegador 
+// para guardar el pedido que se esta armando en el storage del navegador
 const guardarPedidoEnStorage = () => {
-  localStorage.setItem(clavePedidoStorage, JSON.stringify(pedido));
-}
-
+  localStorage.setItem(CLAVE_PEDIDO_STORAGE, JSON.stringify(pedido));
+};
 
 // para recuperar el pedido no enviado del storage del navegador
 const recuperarPedidoDelStorage = () => {
-  
-  const pedidoEnStorage = localStorage.getItem(clavePedidoStorage);
-
-  if(pedidoEnStorage){
-    pedido = JSON.parse(pedidoEnStorage);
-  }else{
-    pedido = []
-  }
-}
-
+  pedido = JSON.parse(localStorage.getItem(CLAVE_PEDIDO_STORAGE)) || [];
+};
 
 const stock = [
   {
     id: 1,
-    prenda: "Vestido",
-    talle: "l",
-    color: "negro",
-    precio: 7500,
-    cantidad: 20,
+    titulo: "Vestido Blanco",
+    img: "../img/pexels-olya-kobruseva-4869701.jpg",
+    descripcion: "Lorem ipsum dolor si",
+    precio: 3500,
   },
   {
     id: 2,
-    prenda: "Vestido",
-    talle: "xl",
-    color: "negro",
-    precio: 7500,
-    cantidad: 20,
+    titulo: "Ropa Informal",
+    img: "../img/pexels-ram-dabhi-5774741.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 3,
-    prenda: "Vestido",
-    talle: "xxl",
-    color: "negro",
-    precio: 7500,
-    cantidad: 20,
+    titulo: "Vestido Naranja",
+    img: "../img/pexels-thirdman-8053687.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 4,
-    prenda: "Vestido",
-    talle: "l",
-    color: "blanco",
-    precio: 7500,
-    cantidad: 20,
+    titulo: "Vestido Negro Playa",
+    img: "../img/pexels-alexander-zvir-4941258.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 5,
-    prenda: "Vestido",
-    talle: "xl",
-    color: "blanco",
-    precio: 7500,
-    cantidad: 20,
+    titulo: "Saco Cielo",
+    img: "../img/pexels-cottonbro-10669649.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 6,
-    prenda: "Vestido",
-    talle: "xxl",
-    color: "blanco",
-    precio: 7500,
-    cantidad: 20,
+    titulo: "Vestido Floreado",
+    img: "../img/pexels-juliano-astc-9396259.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 7,
-    prenda: "Vestido",
-    talle: "l",
-    color: "rosa",
-    precio: 7500,
-    cantidad: 20,
+    titulo: "Mono Corto",
+    img: "../img/pexels-mikhail-nilov-7624800.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
+    precio: 4500,
   },
   {
     id: 8,
-    prenda: "Vestido",
-    talle: "xl",
-    color: "rosa",
-    precio: 7500,
-    cantidad: 20,
+    titulo: "Vestido Rojo",
+    img: "../img/pexels-rulo-davila-5315369.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 9,
-    prenda: "Vestido",
-    talle: "xxl",
-    color: "rosa",
-    precio: 7500,
-    cantidad: 20,
+    titulo: "Vestido Rayas Azul",
+    img: "../img/pexels-sharath-kumar-10130971.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 10,
-    prenda: "Remeron",
-    talle: "l",
-    color: "negro",
-    precio: 5900,
-    cantidad: 20,
+    titulo: "Vestido Negro Corto",
+    img: "../img/pexels-rich-ortiz-5661568.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 11,
-    prenda: "Remeron",
-    talle: "xl",
-    color: "negro",
-    precio: 5900,
-    cantidad: 20,
+    titulo: "Jardinero Cuadriculado",
+    img: "../img/pexels-josue-ladoo-pelegrin-7446545.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 12,
-    prenda: "Remeron",
-    talle: "xxl",
-    color: "negro",
-    precio: 5900,
-    cantidad: 20,
+    titulo: "Vestido Estampado",
+    img: "./img/pexels-jennifer-enujiugha-2395921.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 13,
-    prenda: "Remeron",
-    talle: "l",
-    color: "blanco",
-    precio: 5900,
-    cantidad: 20,
+    titulo: "Vestido Blanco Playa",
+    img: "../img/pexels-trương-kháng-9747505.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 14,
-    prenda: "Remeron",
-    talle: "xl",
-    color: "blanco",
-    precio: 5900,
-    cantidad: 20,
+    titulo: "Saco Fucsia",
+    img: "../img/pexels-cottonbro-10669636.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 15,
-    prenda: "Remeron",
-    talle: "xxl",
-    color: "blanco",
-    precio: 5900,
-    cantidad: 20,
+    titulo: "Saco Coral",
+    img: "../img/pexels-rulo-davila-10145728.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4500,
   },
   {
     id: 16,
-    prenda: "Buzos",
-    talle: "l",
-    color: "negro",
-    precio: 5900,
-    cantidad: 20,
-  },
-  {
-    id: 17,
-    prenda: "Buzos",
-    talle: "xl",
-    color: "negro",
-    precio: 5900,
-    cantidad: 20,
-  },
-  {
-    id: 18,
-    prenda: "Buzos",
-    talle: "xxl",
-    color: "negro",
-    precio: 5900,
-    cantidad: 20,
-  },
-  {
-    id: 19,
-    prenda: "Buzos",
-    talle: "l",
-    color: "blanco",
-    precio: 7500,
-    cantidad: 20,
-  },
-  {
-    id: 20,
-    prenda: "Buzos",
-    talle: "xl",
-    color: "blanco",
-    precio: 7500,
-    cantidad: 20,
-  },
-  {
-    id: 21,
-    prenda: "Buzos",
-    talle: "xxl",
-    color: "blanco",
-    precio: 7500,
-    cantidad: 20,
-  },
-  {
-    id: 22,
-    prenda: "Buzos",
-    talle: "l",
-    color: "rosa",
-    precio: 7500,
-    cantidad: 20,
-  },
-  {
-    id: 23,
-    prenda: "Buzos",
-    talle: "xl",
-    color: "rosa",
-    precio: 7500,
-    cantidad: 20,
-  },
-  {
-    id: 24,
-    prenda: "Buzos",
-    talle: "xxl",
-    color: "rosa",
-    precio: 7500,
-    cantidad: 20,
-  },
-  {
-    id: 25,
-    prenda: "Camisas",
-    talle: "l",
-    color: "rosa",
-    precio: 8300,
-    cantidad: 20,
-  },
-  {
-    id: 26,
-    prenda: "Camisas",
-    talle: "xl",
-    color: "rosa",
-    precio: 8300,
-    cantidad: 20,
-  },
-  {
-    id: 27,
-    prenda: "Camisas",
-    talle: "xxl",
-    color: "rosa",
-    precio: 8300,
-    cantidad: 20,
-  },
-  {
-    id: 28,
-    prenda: "Camisas",
-    talle: "l",
-    color: "negro",
-    precio: 8300,
-    cantidad: 20,
-  },
-  {
-    id: 29,
-    prenda: "Camisas",
-    talle: "xl",
-    color: "negro",
-    precio: 8300,
-    cantidad: 20,
-  },
-  {
-    id: 30,
-    prenda: "Camisas",
-    talle: "xxl",
-    color: "negro",
-    precio: 8300,
-    cantidad: 20,
-  },
-  {
-    id: 31,
-    prenda: "Camisas",
-    talle: "l",
-    color: "blanco",
-    precio: 8300,
-    cantidad: 20,
-  },
-  {
-    id: 32,
-    prenda: "Camisas",
-    talle: "xl",
-    color: "blanco",
-    precio: 8300,
-    cantidad: 20,
-  },
-  {
-    id: 33,
-    prenda: "Camisas",
-    talle: "xxl",
-    color: "blanco",
-    precio: 8300,
-    cantidad: 20,
-  },
-  {
-    id: 34,
-    prenda: "Polleras",
-    talle: "l",
-    color: "rosa",
-    precio: 4700,
-    cantidad: 20,
-  },
-  {
-    id: 35,
-    prenda: "Polleras",
-    talle: "xl",
-    color: "rosa",
-    precio: 4700,
-    cantidad: 20,
-  },
-  {
-    id: 36,
-    prenda: "Polleras",
-    talle: "xxl",
-    color: "rosa",
-    precio: 4700,
-    cantidad: 20,
+    titulo: "Pantalon Naranja",
+    img: "./img/pexels-rulo-davila-7861082.jpg",
+    descripcion: "Lorem ipsum dolor sit",
+    precio: 4600,
   },
 ];
 
-const alMenosUno = (filtros, valor) => {
-  for (filtro of filtros) {
-    if (valor == filtro) {
-      return true;
-    }
-  }
-  return false;
-};
-
-const inputUsuario = (mensaje, filtros, error) => {
-  let input = prompt(mensaje);
-
-  while (!alMenosUno(filtros, input)) {
-    alert(error);
-    input = prompt(mensaje);
-  }
-
-  return input;
-};
-
-const agregarAlPedido = (prenda, talle, color) => {
-  const itemPedido = stock.find(
-    (producto) =>
-      producto.prenda == prenda &&
-      producto.talle == talle &&
-      producto.color == color
-  );
-
-  pedido.push(itemPedido);
-};
-
-const actualizarHtmlDelPedido = () => {
-  let container = document.getElementById("pedido");
-
-  const total = pedido.reduce((acc, producto) => acc + producto.precio, 0);
-
-  let costoTotal = document.getElementById("costoTotal");
-  let cantidad = document.getElementById("cantidad");
-  costoTotal.innerText = total;
-
-  cantidad.innerText = pedido.length;
-
-  container.innerHTML = pedido
-    .map(
-      (item) =>
-        `<li>producto ${item.prenda} - talle ${item.talle} - color ${item.color}.\n</li>`
-    )
-    .join("");
-
-  guardarPedidoEnStorage();
-};
-
-const nuevoItem = () => {
-  const prendas = [...new Set(stock.map((producto) => producto.prenda))];
-  let prenda = inputUsuario(
-    `¿Qué es lo que esta buscando? ${prendas} o escriba ESC para finalizar.`,
-    [...prendas, "ESC"],
-    "Ingrese un producto valido"
-  );
-
-  //POR EL MOMENTO PARA QUE EL USUARIO CANCELE EL INGRESO DE UN PRODUCTO, TIENE QUE ESCRIBIR ESC, ESTO SERÁ MODIFICADO EN LA ENTREGA FINAL.
-  if (prenda == "ESC") {
-    return;
-  }
-
-  let talles = [
-    ...new Set(
-      stock
-        .filter((producto) => producto.prenda == prenda)
-        .map((producto) => producto.talle)
-    ),
-  ];
-  talle = inputUsuario(
-    `Indique el talle deseado. Talle ${talles}`,
-    talles,
-    "Ingrese un talle valido"
-  );
-
-  let colores = [
-    ...new Set(
-      stock
-        .filter(
-          (producto) => producto.prenda == prenda && producto.talle == talle
-        )
-        .map((producto) => producto.color)
-    ),
-  ];
-
-  color = inputUsuario(
-    `Indique que color le gustaria. ${colores}.`,
-    colores,
-    "Ingrese un color valido"
-  );
-
-  agregarAlPedido(prenda, talle, color);
-  actualizarHtmlDelPedido();
-};
-
 const limpiarPedido = () => {
   pedido = [];
-  actualizarHtmlDelPedido();
   guardarPedidoEnStorage();
+  cerrarCarrito();
 };
 
-const confirmarPedido = () => { 
-  //SI EL CARRITO NO TIENE NINGUN PRODUCTO EL USUARIO NO PUEDE CONFIRMAR EL PEDIDO.
-  if (pedido.length <= 0) {
-    alert("Por favor ingrese un producto al carrito.");
-    return;
-  }
+const confirmarPedido = () => {
   alert("Gracias por utiizar Charly Lovers, su pedido ya fue enviado.");
   limpiarPedido();
 };
 
+const agregarAlCarrito = (prendaId) => {
+  const prendaSeleccionada = stock.find((producto) => producto.id === prendaId);
+  pedido.push(prendaSeleccionada);
+  guardarPedidoEnStorage();
+};
+
+const renderizarCatalogo = () => {
+  let catalogo = document.getElementById("catalogo");
+  catalogo.innerHTML = stock
+    .map(
+      (item) =>
+        `<div class="card">
+      <img src="${item.img}" alt="" />
+      <h4>${item.titulo}</h4>
+      <p>$${item.precio}</p>
+      <input type="button" value="Agregar al Carrito" onclick="agregarAlCarrito(${item.id})"/>
+    </div>`
+    )
+    .join("");
+};
+
+const cerrarCarrito = () => {
+  let carrito = document.getElementById("carrito");
+  carrito.innerHTML = "";
+};
+
+const mostrarCarrito = () => {
+  const total = pedido.reduce((acc, producto) => acc + producto.precio, 0);
+  let carrito = document.getElementById("carrito");
+  carrito.innerHTML = `<div class="modal">
+  <div class="modal-container">
+      <img class="modal-img" src="img/CHARLY LOVERS.png" >
+      <h2 class="title">Detalle de tu orden de compra</h2>
+      <p class="paragraph">Total del pedido: $${total}</p>
+      ${pedido
+        .map(
+          (item) =>
+            `<div>
+        ${item.titulo} $${item.precio}
+        </div>`
+        )
+        .join("")}
+      <div class="btns">
+          <a href="#" class="open-view" onclick="limpiarPedido()">Vaciar carrito</a>
+          <a href="#" class=" ${
+            pedido.length > 0 ? "open-guide" : "open-guide-disabled"
+          }" onclick="confirmarPedido() ">Comprar</a>
+      </div>
+      <a href="#" class="close" onclick="cerrarCarrito()">&times;</a>
+  </div>
+</div> `;
+};
 
 ///////// Algoritmo cuando el usuario accede a la pagina
-
+renderizarCatalogo();
 recuperarPedidoDelStorage();
-actualizarHtmlDelPedido();
 
-//DEFINO MIS EVENTOS
-//CUANDO EL USUARIO CLICKEA LOS BOTONES SE EJECUTAN LAS OPERACIONES.
-let nuevoItemBtn = document.getElementById("nuevoItem");
-nuevoItemBtn.onclick = nuevoItem;
-let confirmarBtn = document.getElementById("confirmar");
-confirmarBtn.onclick = confirmarPedido;
-let cancelarBtn = document.getElementById("cancelar");
-cancelarBtn.onclick = limpiarPedido;
-
-// evento para refrescar la pagina por si el usuario habia cambiado de tab 
-document.addEventListener("visibilitychange", function() {
-  if (document.hidden){
-      console.log("El tab no es visible")
-  } else {
-      location.reload(); // refresa la pagina
-  }}
-)
+// evento para refrescar la pagina por si el usuario habia cambiado de tab
+document.addEventListener("visibilitychange", function () {
+  document.hidden ? console.log("El tab no es visible") : location.reload();
+});
