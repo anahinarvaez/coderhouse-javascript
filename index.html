@@ -4,21 +4,93 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Poppins:wght@200&family=Quicksand&family=Raleway:wght@100;200;300;500&family=Roboto:wght@100;400;500&family=Shizuru&family=Square+Peg&family=Tangerine:wght@700&family=Ubuntu:wght@300;500&family=Zilla+Slab:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/0c2fd3f13a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Charly Lovers Home</title>
   </head>
   <body>
-    <h1>Bienvenida a Charly Lovers</h1>
-    <h3>Cantidad de productos <b id="cantidad"></b></h3>
-    <h4>Total <b id="costoTotal"></b></h4>
-    <h4>Detalle</h4>
+    <nav class="navbar">
+      <div class="nav">
+        <img src="../img/CHARLY LOVERS.png" class="brand-logo" alt="" />
+        <div class="nav-items">
+          <div class="search">
+            <input
+              type="text"
+              class="search-box"
+              placeholder="buscar producto"
+            />
+            <button class="search-btn">Buscar</button>
+          </div>
+          <a href="#"><img src="img/user.png" alt="" /></a>
+          <a href="#" onclick="mostrarCarrito()"
+            ><img src="img/cart.png" alt=""
+          /></a>
+        </div>
+      </div>
+      <ul class="links-container">
+        <li class="link-item"><a href="#" class="link">home</a></li>
+        <li class="link-item"><a href="#" class="link">vestidos</a></li>
+        <li class="link-item"><a href="#" class="link">pantalones</a></li>
+        <li class="link-item"><a href="#" class="link">remeras</a></li>
+        <li class="link-item"><a href="#" class="link">accessorios</a></li>
+      </ul>
+    </nav>
+    <!--VENTANA MODAL CARRITO-->
 
-    <ul id="pedido"></ul>
-    <div>
-      <button id="nuevoItem">Agregar producto</button>
-      <button id="confirmar">Confirmar</button>
-      <button id="cancelar">Cancelar</button>
-    </div>
+    <div id="carrito"></div>
 
-    <script src="js/main.js"></script>
+    <div class="container" id="catalogo"></div>
+
+    <!--Footer-->
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure>
+            <a href="#">
+              <img src="img/CHARLY LOVERS.png" alt="Logo De Charly Lovers" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>SOBRE NOSOTRAS</h2>
+          <p>
+            Charly Lovers es una tienda de ropa para chicas fundada en 2022.
+            Nace de la pasión por la moda de una joven emprendedora. En nuestra
+            tienda ofrecemos la moda actual y de tendencia enfocada a todo tipo
+            de público femenino y con precios competitivos.
+          </p>
+        </div>
+        <div class="box">
+          <h2>SIGUENOS</h2>
+          <div class="red-social">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small
+          >&copy; 2022 <b>Charly Lovers</b> - Todos los Derechos
+          Reservados.</small
+        >
+      </div>
+    </footer>
   </body>
+
+  <script src="js/main.js"></script>
 </html>
