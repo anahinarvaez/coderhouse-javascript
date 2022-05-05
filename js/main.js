@@ -135,6 +135,29 @@ const limpiarPedido = () => {
   cerrarCarrito();
 };
 
+const vaciarCarrito = () => {
+  Swal.fire({
+    title: '¿Esta seguro de que quiere borrar el pedido?',
+    text: "Los items seleccionados serán eliminados",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '¡Si, vaciar!',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      limpiarPedido();
+      Swal.fire(
+        '¡Eliminado!',
+        'Su pedido ha sido borrado.',
+        'success'
+      )
+    }
+  })
+
+};
+
 const confirmarPedido = () => {
   alert("Gracias por utiizar Charly Lovers, su pedido ya fue enviado.");
   limpiarPedido();
@@ -183,7 +206,7 @@ const mostrarCarrito = () => {
         )
         .join("")}
       <div class="btns">
-          <a href="#" class="open-view" onclick="limpiarPedido()">Vaciar carrito</a>
+          <a href="#" class="open-view" onclick="vaciarCarrito()">Vaciar carrito</a>
           <a href="#" class=" ${
             pedido.length > 0 ? "open-guide" : "open-guide-disabled"
           }" onclick="confirmarPedido() ">Comprar</a>
