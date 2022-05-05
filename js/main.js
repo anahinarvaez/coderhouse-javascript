@@ -159,7 +159,11 @@ const vaciarCarrito = () => {
 };
 
 const confirmarPedido = () => {
-  alert("Gracias por utiizar Charly Lovers, su pedido ya fue enviado.");
+  Swal.fire(
+    'Compra exitosa.',
+    'Gracias por utiizar Charly Lovers, su pedido ya fue enviado.',
+    'success'
+  )
   limpiarPedido();
 };
 
