@@ -169,7 +169,7 @@ const removerItemDelCarrito = (carritoPosition) => {
         cerrarCarrito();
       }
 
-      Swal.fire(`"${prenda.titulo}" removido del carrito!`, "success");
+      Swal.fire(`"${prenda.titulo}" removido del carrito!`);
     }
   });
 };
