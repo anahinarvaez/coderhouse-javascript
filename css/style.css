@@ -60,29 +60,6 @@
   background: #b804b8;
 }
 
-/* *{
-    box-sizing: border-box;
-}
-
-
-.container{
-    display: flex;
-    height: 300px;
-    justify-content: center;
-    background-color: blueviolet;
-    padding: 10px;
-    border: 2px solid black;
-}
-
-.container div{
-    background-color: beige;
-    width: 190px;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
-    border: 2px solid black;
-} */
 /*VENTANA MODAL */
 
 .modal {
@@ -97,9 +74,10 @@
 .modal-container {
   position: relative;
   margin: auto;
-  width: 90%;
+  margin-top: 150px;
+  width: 70%;
   max-width: 600px;
-  max-height: 100%;
+  max-height: 80%;
   background-color: #fff;
   border-radius: 6px;
   padding: 3em 2.5em;
@@ -108,6 +86,38 @@
   place-items: center;
   grid-auto-columns: 100%;
 }
+
+.modal-container-productos {
+  overflow: scroll;
+  height: 300px;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-catalogo {
+  width: 100%;
+  height: 60px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.producto-catalogo .btn-remover {
+  margin-right: 40px;
+  background-color: #706c6f;
+  height: 40px;
+  width: 40px;
+  text-decoration: none;
+  color: #e6e6e6;
+  border-radius: 100%;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .title {
   text-align: center;
   font-size: 2.5rem;
@@ -235,14 +245,6 @@
   font-size: 15px;
 }
 
-@media screen and (max-widht: 800px) {
-  .pie-pagina .grupo-1 {
-    width: 90%;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 30px;
-    padding: 35px 0px;
-  }
-}
 .lds-heart {
   display: inline-block;
   position: relative;

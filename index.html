@@ -22,7 +22,7 @@
     <title>Charly Lovers Home</title>
   </head>
   <body>
-<nav class="navbar">
+    <nav class="navbar">
       <div class="nav">
         <img src="./img/CHARLY LOVERS.png" class="brand-logo" alt="" />
         <div class="nav-items">
@@ -31,8 +31,11 @@
               type="text"
               class="search-box"
               placeholder="buscar producto"
+              id="search-box"
             />
-            <button class="search-btn">Buscar</button>
+            <button class="search-btn" onclick="filtrarPrendas()">
+              Buscar
+            </button>
           </div>
           <a href="#"><img src="img/user.png" alt="" /></a>
           <a href="#" onclick="mostrarCarrito()"
@@ -41,22 +44,25 @@
         </div>
       </div>
       <ul class="links-container">
-        <li class="link-item"><a href="#" class="link">home</a></li>
-        <li class="link-item"><a href="#" class="link">vestidos</a></li>
-        <li class="link-item"><a href="#" class="link">pantalones</a></li>
-        <li class="link-item"><a href="#" class="link">remeras</a></li>
-        <li class="link-item"><a href="#" class="link">accessorios</a></li>
+        <li class="link-item">
+          <a href="#" class="link" onclick="traerTodos()">home</a>
+        </li>
+        <li class="link-item">
+          <a href="#" class="link" onclick="filtrarPorVestidos()">vestidos</a>
+        </li>
+        <li class="link-item">
+          <a href="#" class="link" onclick="filtrarPorSacos()">sacos</a>
+        </li>
+        <li class="link-item">
+          <a href="#" class="link" onclick="filtrarPorExtras()">extras</a>
+        </li>
       </ul>
     </nav>
-
 
     <!-- VENTANA MODAL CARRITO -->
 
     <div id="carrito"></div>
-
-    <div class="container" id="catalogo">
-      <div class="lds-heart"><div></div></div>
-    </div>
+    <div class="container" id="catalogo"></div>
 
     <!--Footer-->
     <footer class="pie-pagina">
@@ -97,5 +103,5 @@
   </body>
 
   <script src="js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>

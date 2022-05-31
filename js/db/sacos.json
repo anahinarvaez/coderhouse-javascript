@@ -1,0 +1,24 @@
+[
+  {
+    "id": 5,
+    "titulo": "Saco Cielo",
+    "img": "./img/pexels-cottonbro-10669649.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+
+  {
+    "id": 14,
+    "titulo": "Saco Fucsia",
+    "img": "./img/pexels-cottonbro-10669636.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+  {
+    "id": 15,
+    "titulo": "Saco Coral",
+    "img": "./img/pexels-rulo-davila-10145728.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  }
+]

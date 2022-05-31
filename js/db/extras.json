@@ -1,0 +1,33 @@
+[
+  {
+    "id": 2,
+    "titulo": "Ropa Informal",
+    "img": "./img/pexels-ram-dabhi-5774741.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+
+  {
+    "id": 7,
+    "titulo": "Mono Corto",
+    "img": "./img/pexels-mikhail-nilov-7624800.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+
+  {
+    "id": 11,
+    "titulo": "Jardinero Cuadriculado",
+    "img": "./img/pexels-josue-ladoo-pelegrin-7446545.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+
+  {
+    "id": 16,
+    "titulo": "Pantalon Naranja",
+    "img": "./img/pexels-rulo-davila-7861082.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4600
+  }
+]

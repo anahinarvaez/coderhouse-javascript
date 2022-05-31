@@ -46,8 +46,8 @@
       "titulo": "Mono Corto",
       "img": "./img/pexels-mikhail-nilov-7624800.jpg",
       "descripcion": "Lorem ipsum dolor sit",
-      "precio": 4500,
       "precio": 4500
+      
     },
     {
       "id": 8,
