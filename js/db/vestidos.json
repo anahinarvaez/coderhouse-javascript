@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "titulo": "Vestido Blanco",
+    "img": "./img/pexels-olya-kobruseva-4869701.jpg",
+    "descripcion": "Lorem ipsum dolor si",
+    "precio": 3500
+  },
+
+  {
+    "id": 3,
+    "titulo": "Vestido Naranja",
+    "img": "./img/pexels-thirdman-8053687.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+  {
+    "id": 4,
+    "titulo": "Vestido Negro Playa",
+    "img": "./img/pexels-alexander-zvir-4941258.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+
+  {
+    "id": 6,
+    "titulo": "Vestido Floreado",
+    "img": "./img/pexels-juliano-astc-9396259.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+
+  {
+    "id": 8,
+    "titulo": "Vestido Rojo",
+    "img": "./img/pexels-rulo-davila-5315369.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+  {
+    "id": 9,
+    "titulo": "Vestido Rayas Azul",
+    "img": "./img/pexels-sharath-kumar-10130971.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+  {
+    "id": 10,
+    "titulo": "Vestido Negro Corto",
+    "img": "./img/pexels-rich-ortiz-5661568.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+
+  {
+    "id": 12,
+    "titulo": "Vestido Estampado",
+    "img": "./img/pexels-jennifer-enujiugha-2395921.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  },
+  {
+    "id": 13,
+    "titulo": "Vestido Blanco Playa",
+    "img": "./img/pexels-trương-kháng-9747505.jpg",
+    "descripcion": "Lorem ipsum dolor sit",
+    "precio": 4500
+  }
+]
