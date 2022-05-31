@@ -201,7 +201,7 @@ const mostrarMensaje = (mensaje, isError) => {
 const traerRopa = (categoria) => {
   mostrarSpinner();
 
-  fetch(`/js/db/${categoria ? categoria : TODO}.json`)
+  fetch(`./js/db/${categoria ? categoria : TODO}.json`)
     .then((response) => response.json())
     .then((json) => {
       stock = json;
@@ -227,7 +227,7 @@ const filtrarPrendas = () => {
   buscador.value = "";
   mostrarSpinner();
 
-  fetch(`/js/db/todo.json`)
+  fetch(`./js/db/todo.json`)
     .then((response) => response.json())
     .then((prendas) => {
       stock = prendas.filter((prenda) => stringEquals(prenda.titulo, filtro));
